@@ -1,0 +1,241 @@
+// Welcome to the map runner configuration file. Syntax is the same as in Pickit/default.ipd.
+// Keys available: [RunMap], [IgnoreMap], [WaystoneTier], [UpgradeToMagic], [UpgradeToRare], [UpgradeWaystoneTier].
+// Please note that [IgnoreMap] has higher priority than other keys.
+// Whenever you use the "less than" symbol (<) for WaystoneTier, you'll need to add [WaystoneTier] >= "66" (could be more than 66 but never less). This is to avoid bug, sry about that.
+// Map upgrading will only be made on a map that has been selected by the bot to farm.
+// All the map mods can be found in ModsList.html file.
+// Big thanks to jps42 for updating and improving this file.
+
+// Example: Run rare maps level less than 3
+// [WaystoneTier] >= "1" && [WaystoneTier] < "3" && [Rarity] == "Rare" # [RunMap] == "true"
+
+/////////////////////////////////////////////////////////////////////////////////////
+//                                                                                 //
+//                                 B O O K M A R K                                 //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//Bookmark
+//General Settings
+//Map Mods - Ignore
+//
+/////////////////////////////////////////////////////////////////////////////////////
+//                                                                                 //
+//                            GENERAL SETTINGS                                     //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+
+// Map Tier setting
+[WaystoneTier] >= "15" && [WaystoneTier] <= "16" # [RunMap] == "true" // Run Waystones (1-16)
+
+// Map Rarity to Run (Uncommenting means Ignore)
+[Rarity] == "Unique" # [IgnoreMap] == "true"
+// [Rarity] == "Rare" # [IgnoreMap] == "true"
+// [Rarity] == "Magic" # [IgnoreMap] == "true"
+// [Rarity] == "Normal" # [IgnoreMap] == "true"
+
+// If you want to transmute or alch maps before running them. 
+[Rarity] == "Normal" # [UpgradeToRare] == "true" // Use Alchemy - Careful with this vs regal augmentation
+// [Rarity] == "Normal" # [UpgradeToMagic] == "true" // Use Transmutation
+
+// Map augmentation
+[Rarity] == "Magic" # [AugmentIfPossible] == "true" // Use Augmentation
+[Rarity] == "Magic" # [UpgradeToRare] == "true" // Use Regal
+[Rarity] == "Rare" # [ExaltIfPossible] == "4" // Use Exalted Orbs Until 4 Mods are Reached
+// [Rarity] == "Rare" && [WaystoneTier] >= "15" # [Corrupt] == "true" // Use Vaal Orb for tier 15 waystones, make sure that runmap setting is setup to tier 16
+
+/////////////////////////////////////////////////////////////////////////////////////
+//                                                                                 //
+//                               MAP MODS - IGNORE                                 //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+
+// Ignore Map - (Select Map Rarity for each mod to ignore)
+
+// PREFIX
+
+// [map_item_drop_quantity_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Quantity of Items found in this Area
+// [map_item_drop_quantity_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Quantity of Items found in this Area 
+
+// [map_item_drop_rarity_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Rarity of Items found in this Area
+// [map_item_drop_rarity_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Rarity of Items found in this Area
+
+// [map_gold_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Gold found in this Area
+// [map_gold_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Gold found in this Area
+
+// [map_experience_gain_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Experience gain
+// [map_experience_gain_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Experience gain
+
+// [map_pack_size_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Pack size
+// [map_pack_size_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Pack size
+
+// [map_monster_tre_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased number of Monster Packs
+// [map_monster_tre_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased number of Monster Packs
+
+// [map_chest_amount_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased amount of Chests
+// [map_chest_amount_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased amount of Chests
+
+// [map_number_of_magic_packs_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Magic Monsters
+// [map_number_of_magic_packs_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Magic Monsters
+
+// [map_number_of_rare_packs_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased number of Rare Monsters
+// [map_number_of_rare_packs_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased number of Rare Monsters
+
+// [map_number_of_magic_packs_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Magic Monsters
+// [map_number_of_magic_packs_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Magic Monsters
+
+// [map_magic_chest_amount_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased amount of Magic Chests
+// [map_magic_chest_amount_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased amount of Magic Chests
+
+// [map_rare_chest_amount_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased amount of Rare Chests
+// [map_rare_chest_amount_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased amount of Rare Chests
+
+// [map_magic_pack_size_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Magic Pack Size
+// [map_magic_pack_size_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Magic Pack Size
+
+// [map_rare_monster_num_additional_modifiers] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Rare Monsters have additional Modifier
+// [map_rare_monster_num_additional_modifiers] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Rare Monsters have additional Modifier
+
+// [maps_with_bosses_additional_shrine_+] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains an additional Shrine
+// [maps_with_bosses_additional_shrine_+] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains an additional Shrine
+
+// [maps_with_bosses_additional_strongbox_+] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains an additional Strongbox
+// [maps_with_bosses_additional_strongbox_+] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains an additional Strongbox
+
+// [maps_with_bosses_additional_essence_+] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains an additional Essence
+// [maps_with_bosses_additional_essence_+] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains an additional Essence
+
+// [map_monster_additional_undead_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Undead
+// [map_monster_additional_undead_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Undead
+
+// [map_monster_additional_beasts_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Beasts
+// [map_monster_additional_beasts_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Beasts
+
+// [map_monster_additional_ezomyte_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Ezomyte Monsters
+// [map_monster_additional_ezomyte_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Ezomyte Monsters
+
+// [map_monster_additional_faridun_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Faridun Monsters
+// [map_monster_additional_faridun_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Faridun Monsters
+
+// [map_monster_additional_vaal_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Vaal Monsters
+// [map_monster_additional_vaal_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Vaal Monsters
+
+// [map_monster_additional_baron_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Iron Guards
+// [map_monster_additional_baron_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Iron Guards
+
+// [map_monster_additional_perennial_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Plagued Monsters
+// [map_monster_additional_perennial_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Plagued Monsters
+
+// [map_monster_additional_doryani_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Transcended Monsters
+// [map_monster_additional_doryani_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Transcended Monsters
+
+// [map_monster_additional_bramble_packs] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area contains # additional packs of Bramble Monsters
+// [map_monster_additional_bramble_packs] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area contains # additional packs of Bramble Monsters
+
+
+// SUFFIX
+
+// [map_monsters_%_all_damage_to_gain_as_fire] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Fire
+// [map_monsters_%_all_damage_to_gain_as_fire] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Fire
+
+// [map_monsters_%_all_damage_to_gain_as_cold] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Cold
+// [map_monsters_%_all_damage_to_gain_as_cold] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Cold
+
+// [map_monsters_%_all_damage_to_gain_as_lightning] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Lightning
+// [map_monsters_%_all_damage_to_gain_as_lightning] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Lightning
+
+// [map_monsters_damage_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Monster Damage
+// [map_monsters_damage_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Monster Damage
+
+// [map_monsters_movement_speed_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Increased Monster Movement Speed
+// [map_monsters_movement_speed_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Increased Monster Movement Speed
+
+// [map_monsters_critical_strike_chance_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % increased Critical Hit Chance
+// [map_monsters_critical_strike_chance_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % increased Critical Hit Chance
+
+// [map_monsters_life_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % more Monster Life
+// [map_monsters_life_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % more Monster Life
+
+// [map_monsters_additional_elemental_resistance] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % Monster Elemental Resistances
+// [map_monsters_additional_elemental_resistance] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % Monster Elemental Resistances
+
+// [map_monsters_additional_strength_ratio_%_for_armour] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters are Armoured
+// [map_monsters_additional_strength_ratio_%_for_armour] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters are Armoured
+
+// [map_monsters_additional_dexterity_ratio_%_for_evasion] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters are Evasive
+// [map_monsters_additional_dexterity_ratio_%_for_evasion] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters are Evasive
+
+// [map_monsters_maximum_life_%_to_add_to_maximum_energy_shield] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters gain % of Maximum Life as Extra Maximum Energy Shield
+// [map_monsters_maximum_life_%_to_add_to_maximum_energy_shield] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters gain % of Maximum Life as Extra Maximum Energy Shield
+
+// [map_monsters_chance_to_poison_on_hit_%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % chance to Poison on Hit
+// [map_monsters_chance_to_poison_on_hit_%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % chance to Poison on Hit
+
+// [map_monsters_chance_to_inflict_bleeding_%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % chance to Bleed on Hit
+// [map_monsters_chance_to_inflict_bleeding_%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % chance to Bleed on Hit
+
+// [map_monsters_ailment_threshold_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % increased Ailment Threshold
+// [map_monsters_ailment_threshold_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % increased Ailment Threshold
+
+// [map_monsters_armour_break_physical_damage_%_dealt_as_armour_break] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters Break Armour equal to % of Physical Damage dealt
+// [map_monsters_armour_break_physical_damage_%_dealt_as_armour_break] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters Break Armour equal to % of Physical Damage dealt
+
+// [map_monsters_accuracy_rating_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % increased Accuracy Rating
+// [map_monsters_accuracy_rating_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % increased Accuracy Rating
+
+// [map_monsters_%_all_damage_to_gain_as_chaos] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Chaos
+// [map_monsters_%_all_damage_to_gain_as_chaos] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters deal % of Damage as Extra Chaos
+
+// [map_monsters_hit_damage_stun_multiplier_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % increased Stun Buildup
+// [map_monsters_hit_damage_stun_multiplier_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % increased Stun Buildup
+
+// [map_monsters_hit_damage_freeze_multiplier_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % increased Freeze Buildup
+// [map_monsters_hit_damage_freeze_multiplier_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % increased Freeze Buildup
+
+// [map_monsters_additional_number_of_projecitles] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters fire x additional Projectiles
+// [map_monsters_additional_number_of_projecitles] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters fire x additional Projectiles
+
+// [map_monsters_area_of_effect_+%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % increased Area of Effect
+// [map_monsters_area_of_effect_+%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % increased Area of Effect
+
+// [map_player_has_level_X_enfeeble] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Players are Cursed with Enfeeble
+// [map_player_has_level_X_enfeeble] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Players are Cursed with Enfeeble
+
+[map_player_has_level_X_temporal_chains] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Players are Cursed with Temporal Chains
+[map_player_has_level_X_temporal_chains] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Players are Cursed with Temporal Chains
+
+// [map_player_has_level_X_elemental_weakness] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Players are Cursed with Elemental Weakness
+// [map_player_has_level_X_elemental_weakness] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Players are Cursed with Elemental Weakness
+
+[map_base_ground_fire_damage_to_deal_per_10_seconds] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area has patches of Burning Ground
+[map_base_ground_fire_damage_to_deal_per_10_seconds] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area has patches of Burning Ground
+
+// [map_ground_ice_base_magnitude] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area has patches of Chilled Ground
+// [map_ground_ice_base_magnitude] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area has patches of Chilled Ground
+
+[map_ground_lightning] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Area has patches of Shocked Ground
+[map_ground_lightning] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Area has patches of Shocked Ground
+
+// [map_monsters_penetrate_elemental_resistances_%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monster Damage Penetrates % Elemental Resistances
+// [map_monsters_penetrate_elemental_resistances_%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monster Damage Penetrates % Elemental Resistances
+
+// [map_additional_player_maximum_resistances_%] < "0" && [Rarity] == "Magic" # [IgnoreMap] == "true" // -% maximum Player Resistances
+// [map_additional_player_maximum_resistances_%] < "0" && [Rarity] == "Rare" # [IgnoreMap] == "true" // -% maximum Player Resistances
+
+// [map_player_charges_gained_+%] < "0" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Players gain % reduced Flask Charges
+// [map_player_charges_gained_+%] < "0" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Players gain % reduced Flask Charges
+
+// [map_player_life_and_es_recovery_speed_+%_final] < "0" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Players have % less Recovery Rate of Life and Energy Shield
+// [map_player_life_and_es_recovery_speed_+%_final] < "0" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Players have % less Recovery Rate of Life and Energy Shield
+
+// [map_player_cooldown_speed_+%_final] < "0" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Players have % less Cooldown Recovery Rate
+// [map_player_cooldown_speed_+%_final] < "0" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Players have % less Cooldown Recovery Rate
+
+// [map_monsters_base_self_critical_strike_multiplier_-%] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters take % reduced Extra Damage from Critical Hits
+// [map_monsters_base_self_critical_strike_multiplier_-%] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters take % reduced Extra Damage from Critical Hits
+
+// [map_monsters_curse_effect_on_self_+%_final] < "0" && [Rarity] == "Magic" # [IgnoreMap] == "true" // % less effect of Curses on Monsters
+// [map_monsters_curse_effect_on_self_+%_final] < "0" && [Rarity] == "Rare" # [IgnoreMap] == "true" // % less effect of Curses on Monsters
+
+// [map_monsters_steal_charges] >= "1" && [Rarity] == "Magic" # [IgnoreMap] == "true" // Monsters have % chance to steal Power, Frenzy and Endurance charges on Hit
+// [map_monsters_steal_charges] >= "1" && [Rarity] == "Rare" # [IgnoreMap] == "true" // Monsters have % chance to steal Power, Frenzy and Endurance charges on Hit
